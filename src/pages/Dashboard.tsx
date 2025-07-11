@@ -1,10 +1,47 @@
-
 import React from 'react';
-import { Brain, TrendingUp, Target, BarChart3, Users, Award, Zap, Eye, Shield, Clock, Lightbulb, Cpu } from 'lucide-react';
+import { Brain, TrendingUp, Target, BarChart3, Users, Award, Zap, Eye, Shield, Clock, Lightbulb, Cpu, Play, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const coreFeatures = [
+    {
+      icon: Brain,
+      title: "Plan Automation",
+      description: "End-to-end IC plan generation based on business rules + AI recommendations",
+      path: "/plan-automation",
+      category: "AI Innovation",
+      demo: true
+    },
+    {
+      icon: Target,
+      title: "Quota Optimization",
+      description: "Fairness-aware, opportunity-aligned quotas with AI-powered analysis",
+      path: "/quota-optimization", 
+      category: "Intelligence",
+      demo: true
+    },
+    {
+      icon: Play,
+      title: "Simulation Engine",
+      description: "Real-time 'what-if' payout and performance modeling with scenario analysis",
+      path: "/simulation-engine",
+      category: "Analytics",
+      demo: true
+    },
+    {
+      icon: Shield,
+      title: "Governance & Compliance",
+      description: "Full audit trail, override control, and rule documentation",
+      path: "/governance",
+      category: "Security",
+      demo: true
+    }
+  ];
+
   const features = [
     {
       icon: Brain,
@@ -88,6 +125,7 @@ const Dashboard = () => {
       case 'Performance': return 'bg-purple-500/20 text-purple-300 border-purple-500/30';
       case 'Automation': return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
       case 'Transparency': return 'bg-green-500/20 text-green-300 border-green-500/30';
+      case 'Security': return 'bg-red-500/20 text-red-300 border-red-500/30';
       default: return 'bg-content-secondary/20 text-content-secondary border-content-secondary/30';
     }
   };
@@ -115,27 +153,75 @@ const Dashboard = () => {
               The world's most advanced AI-powered incentive compensation platform. 
               Transform your sales performance with intelligent automation and predictive insights.
             </p>
-            <div className="flex justify-center space-x-4 pt-8">
-              <Button className="bg-brand-accent hover:bg-brand-accent/90 text-white px-8 py-6 text-lg">
-                Explore Features
-              </Button>
-              <Button variant="outline" className="border-content-secondary text-content-primary px-8 py-6 text-lg">
-                Watch Demo
-              </Button>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center mb-16">
+      {/* Core Features - Interactive Demos */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-content-primary mb-4">
-            Revolutionary AI-Powered Features
+            Core Features - Interactive Demos
           </h2>
           <p className="text-xl text-content-secondary max-w-3xl mx-auto">
-            Experience the future of incentive compensation with breakthrough AI technology 
-            that delivers unprecedented insights and automation.
+            Experience our revolutionary AI-powered features with live, working demonstrations.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {coreFeatures.map((feature, index) => (
+            <Card 
+              key={index} 
+              className="bg-card/50 border-content-secondary/20 hover:border-brand-accent/50 transition-all duration-300 hover:scale-105 group cursor-pointer"
+              onClick={() => navigate(feature.path)}
+            >
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div className="p-3 rounded-full bg-brand-accent/20 group-hover:bg-brand-accent/30 transition-colors">
+                    <feature.icon className="w-6 h-6 text-brand-accent" />
+                  </div>
+                  <div className="flex space-x-2">
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getCategoryColor(feature.category)}`}>
+                      {feature.category}
+                    </span>
+                    {feature.demo && (
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-brand-accent/20 text-brand-accent border border-brand-accent/30">
+                        Live Demo
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <CardTitle className="text-content-primary group-hover:text-brand-accent transition-colors">
+                  {feature.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-content-secondary leading-relaxed mb-4">
+                  {feature.description}
+                </CardDescription>
+                <Button 
+                  className="w-full bg-brand-accent hover:bg-brand-accent/90"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(feature.path);
+                  }}
+                >
+                  Try Interactive Demo
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Additional Features */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-content-primary mb-4">
+            Additional AI-Powered Capabilities
+          </h2>
+          <p className="text-xl text-content-secondary max-w-3xl mx-auto">
+            Comprehensive suite of intelligent features for complete incentive management.
           </p>
         </div>
 
