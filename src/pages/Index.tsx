@@ -16,13 +16,12 @@ const Index = () => {
           <div className="hidden lg:block space-y-6">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold text-content-primary leading-tight">
-                Incentive
-                <span className="text-brand-accent"> Compensation</span>
+                IncentivIQ
                 <br />
-                Portal
+                <span className="text-brand-accent text-3xl">Smart incentive plans powered by AI</span>
               </h1>
               <p className="text-xl text-content-secondary leading-relaxed">
-                Track performance, manage commissions, and drive results with our comprehensive compensation management platform.
+                Revolutionary AI-powered incentive compensation management that drives performance and maximizes results.
               </p>
             </div>
             
@@ -30,15 +29,15 @@ const Index = () => {
             <div className="space-y-4 pt-8">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-state-success rounded-full" />
-                <span className="text-content-secondary">Real-time performance tracking</span>
+                <span className="text-content-secondary">AI-powered commission optimization</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-state-warning rounded-full" />
-                <span className="text-content-secondary">Automated commission calculations</span>
+                <span className="text-content-secondary">Real-time performance analytics</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-accent rounded-full" />
-                <span className="text-content-secondary">Comprehensive analytics dashboard</span>
+                <span className="text-content-secondary">Intelligent forecasting & insights</span>
               </div>
             </div>
           </div>
@@ -55,7 +54,7 @@ const Index = () => {
       {/* Mobile branding */}
       <div className="lg:hidden absolute top-8 left-1/2 -translate-x-1/2 z-10">
         <h1 className="text-2xl font-bold text-content-primary text-center">
-          <span className="text-brand-accent">IC</span> Portal
+          <span className="text-brand-accent">IncentivIQ</span>
         </h1>
       </div>
     </div>

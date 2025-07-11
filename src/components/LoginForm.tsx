@@ -4,6 +4,7 @@ import { Eye, EyeOff, LogIn, User, Crown, Shield, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useNavigate } from 'react-router-dom';
 import RoleCard from './RoleCard';
 
 const roles = [
@@ -39,6 +40,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,7 +54,8 @@ const LoginForm = () => {
     setTimeout(() => {
       setIsLoading(false);
       console.log('Login attempt:', { email, role: selectedRole });
-      alert(`Login attempted for ${selectedRole} role`);
+      // Navigate to dashboard after successful login
+      navigate('/dashboard');
     }, 2000);
   };
 
@@ -61,10 +64,10 @@ const LoginForm = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-content-primary mb-2">
-          Welcome Back
+          Welcome to IncentivIQ
         </h1>
         <p className="text-content-secondary">
-          Sign in to your incentive compensation portal
+          Sign in to your AI-powered compensation portal
         </p>
       </div>
 
@@ -161,7 +164,7 @@ const LoginForm = () => {
           ) : (
             <div className="flex items-center space-x-2">
               <LogIn size={20} />
-              <span>Sign In</span>
+              <span>Sign In to IncentivIQ</span>
             </div>
           )}
         </Button>
