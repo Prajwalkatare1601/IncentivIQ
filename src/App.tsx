@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import PlanAutomation from "./pages/PlanAutomation";
 import QuotaOptimization from "./pages/QuotaOptimization";
 import SimulationEngine from "./pages/SimulationEngine";
 import Governance from "./pages/Governance";
+import SalesRepJourney from "./pages/SalesRepJourney";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,7 @@ const App = () => (
           <Route path="/quota-optimization" element={<QuotaOptimization />} />
           <Route path="/simulation-engine" element={<SimulationEngine />} />
           <Route path="/governance" element={<Governance />} />
+          <Route path="/sales-journey" element={<SalesRepJourney />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

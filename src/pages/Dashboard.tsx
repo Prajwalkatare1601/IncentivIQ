@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Brain, TrendingUp, Target, BarChart3, Users, Award, Zap, Eye, Shield, Clock, Lightbulb, Cpu, Play, Settings } from 'lucide-react';
+import { Brain, TrendingUp, Target, BarChart3, Users, Award, Zap, Eye, Shield, Clock, Lightbulb, Cpu, Play, Settings, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
@@ -38,6 +39,14 @@ const Dashboard = () => {
       description: "Full audit trail, override control, and rule documentation",
       path: "/governance",
       category: "Security",
+      demo: true
+    },
+    {
+      icon: Activity,
+      title: "Sales Rep Journey",
+      description: "Interactive pharma sales career progression with animated milestones and incentive modeling",
+      path: "/sales-journey",
+      category: "Experience",
       demo: true
     }
   ];
